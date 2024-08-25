@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geologica } from "next/font/google";
 import "./globals.css";
 
-const inter = Geologica({ subsets: ["latin"]});
+import Navbar from "./components/navbar";
+
+const geologica = Geologica({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-      <body className={inter.className}>{children}</body>
-
+      <body className={geologica.className}><Navbar></Navbar>{children}</body>
     </html>
   );
 }

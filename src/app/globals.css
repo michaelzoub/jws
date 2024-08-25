@@ -31,3 +31,16 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  ::selection {
+    @apply bg-purple-500;
+  }
+}
+
+@layer components {
+  select option:hover,
+  select option:hover {
+    @apply bg-purple-500;
+  }
+}

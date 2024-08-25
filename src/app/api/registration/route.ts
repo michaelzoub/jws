@@ -10,6 +10,10 @@ export async function POST(request: Request) {
         const collection = await db.collection("users")
         console.log('POST registration connected to collection')
         const body = await request.json()
+        const existingUser = await collection.findOne(body)
+        if (existingUser) {
+            return NextResponse.json({status:400, message: 'User exists.'})
+        }
         await collection.insertOne(body)
         return NextResponse.json({status: 200})
     } catch(error) {
