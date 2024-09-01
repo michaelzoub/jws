@@ -10,6 +10,7 @@ let client:any;
 let db:any;
 
 export async function connectToDatabase() {
+  console.log('connected to MongoDB')
   if (cachedClient && cachedDb) {
     return { client: cachedClient, db: cachedDb };
   }
