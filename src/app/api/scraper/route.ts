@@ -2,7 +2,6 @@
 import puppeteer from 'puppeteer'
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers' //to check what company user has registered
-import { getData } from '../getdatafunc/route'
 import { sendEmail } from '../sendemail/route'
 //also import all users from db
 import { connectToDatabase } from '../../utils/mongodb'
@@ -18,10 +17,6 @@ const meta = "https://www.google.com/search?q=meta%20engineer%20job%20postings&s
 //change this to POST once I'm ready to deploy to prod (CRON checks this file for POST routes)
 
 export async function GET(request: Request) {
-
-    const data = getData() //data from getdata api route -> check what they are to only perform actions on certain companies
-    const user = data.userId //this gets the email
-    const companies = data.companies //this gets the companies
 
 
     try {

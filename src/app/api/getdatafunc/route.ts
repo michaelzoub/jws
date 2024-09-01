@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { cookies } from "next/headers";
 
-export function getData() {
+export function GET() {
     const headerList = headers()
     const userData: any = headerList.get('x-user-data')
     const parsed = JSON.parse(userData)
