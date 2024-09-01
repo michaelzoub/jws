@@ -2,7 +2,7 @@
 import puppeteer from 'puppeteer'
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers' //to check what company user has registered
-import { sendEmail } from '../sendemail/route'
+import { sendEmail } from '../sendemail/send'
 //also import all users from db
 import { connectToDatabase } from '../../utils/mongodb'
 
