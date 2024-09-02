@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geologica } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "./components/navbar";
 
-const geologica = Geologica({ subsets: ["latin"]});
+const roboto = Roboto({ subsets: ["latin"], weight: ['400', '700']});
 
 export const metadata: Metadata = {
   title: "JWS Online",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={geologica.className}><Navbar></Navbar>{children}</body>
+      <body className={roboto.className}><Navbar></Navbar>{children}</body>
     </html>
   );
 }
