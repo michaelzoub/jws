@@ -51,12 +51,14 @@ export async function POST(request: Request) {
         console.log('JWT:', jwttoken)
         //add JWT to cookies
         const expiresAt = new Date(Date.now() + 2592000) // 30 days
-         cookies().set('_vercel_jwt', jwttoken, {
+         cookies().set('token', jwttoken, {
             httpOnly: true,
             secure: true,
             sameSite: 'lax',
+            maxAge: 2592000,
             expires: expiresAt, 
             path: '/',   
+            domain: process.env.NODE_ENV === 'production' ? 'jws-pi.vercel.app' : undefined,
         })
         console.log('cookies set')
         return NextResponse.json({jwttoken})

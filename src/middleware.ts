@@ -11,7 +11,7 @@ const encodedKey = new TextEncoder().encode(key)
 export async function middleware(request: NextRequest) {
     console.log('middleware running')
    // cookies().delete('token')
-    const token:any = request.cookies.get('_vercel_jwt')?.value
+    const token:any = request.cookies.get('token')?.value
     console.log(token)
    if  (request.nextUrl.pathname == './loginroute') {
         return NextResponse.next()
