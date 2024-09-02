@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         console.log('JWT:', jwttoken)
         //add JWT to cookies
         const expiresAt = new Date(Date.now() + 2592000) // 30 days
-         cookies().set('_vercel_jwt', jwttoken, {
+         cookies().set('token', jwttoken, {
             httpOnly: true,
             secure: true,
             sameSite: 'lax',
