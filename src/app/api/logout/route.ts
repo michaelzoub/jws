@@ -9,7 +9,7 @@ export async function POST(request: Request) {
             {
                 status: 200,
                 headers: {
-                    'Set-Cookie': 'token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Strict',
+                    'Set-Cookie': '_vercel_jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Strict',
                     'Location': '/loginroute'
                 }
             }
