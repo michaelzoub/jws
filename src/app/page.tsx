@@ -12,6 +12,7 @@ export default function Home() {
   const [error1, setError1] = useState('')
   const [error2, setError2] = useState('')
   const [successfullog, setSuccessfullog] = useState(false)
+  const [emailerro, setEmailerror] = useState('')
 
   const [userInfo, setUserInfo] = useState('')
   const [userInfoCompanies, setUserInfoCompanies] = useState('')
@@ -54,6 +55,10 @@ export default function Home() {
       if (password !== '' && user !== '') {
     setError1('')
     setError2('')
+    const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email.test(user)) {
+      setEmailerror('☒ Error, please enter a valid email.')
+    } else {
 
     const hashedPassword = hash(password)
     console.log(hashedPassword)
@@ -76,6 +81,7 @@ export default function Home() {
     setUser('')
     setPassword('')
     }
+  }
   }
 
   async function logout(e:any) {
@@ -107,9 +113,10 @@ export default function Home() {
         <input type="password" placeholder="Password" className="mt-2 rounded-sm p-1 focus:outline outline-purple-500" onChange={(e)=> setPassword(e.target.value)} value={password}></input>
         <div className={`${error1? 'absolute ml-52 text-sm transition ease-in-out delay-200 duration-300 translate-y-1 bg-red-400 rounded-sm px-1 py-[2px]' : 'hidden'}`}>!</div>
         <div className={`${error2? 'absolute ml-52 mt-11 text-sm transition ease-in-out delay-200 duration-300 translate-y-1 bg-red-400 rounded-sm px-1 py-[2px]' : 'hidden'}`}>!</div>
+        <div className={`${emailerro? 'w-full border-2 border-red-400 bg-red-900 rounded-lg text-white mt-3 p-1 text-sm' : 'hidden'}`}>{emailerro}</div>
         <button className="rounded-sm bg-purple-500 w-full mt-5 transition ease-in-out delay-200 hover:translate-y-[-2px] hover:bg-purple-400 duration-300 text-white" onClick={handleSubmit}>Sign Up</button>
       </form>
-      <div className={`${successfullog? 'mt-6 text-center animate-pulse' : 'hidden'}`}>We've sent you an email! Please verify yourself.</div>
+      <div className={`${successfullog? 'mt-6 text-center w-full border-2 border-purple-400 bg-purple-900 rounded-lg text-white mt-3 p-1' : 'hidden'}`}>Thank you for signing up! Please log in to confirm registration.</div>
       <div className="flex flex-col h-36 text-center">
         <div className="mt-4 text-sm">Already have an account? <Link href="/loginroute" className="text-purple-300">Log In</Link></div>
       </div>

@@ -66,7 +66,7 @@ export default function Companies() {
         </div>
         
     <button onClick={onClickFinance} className={`text-left h-fit px-1 w-full rounded-sm border-2 border-purple-400 bg-purple-700`}>Finance {clickaClick ? '-' : '+'}</button>
-        <div className={`${clickaClick? 'flex flex-col bg-zinc-700 shadow-inner rounded-md p-2' : 'hidden'}`}>
+        <div className={`${clickaClick? 'flex flex-col bg-zinc-700 shadow-inner rounded-sm p-2' : 'hidden'}`}>
             <div className="flex flex-row">
                 <input type="checkbox" checked={values.includes('JP Morgan')} value="JP Morgan" onChange={handleChecked}></input>
                 <label className="mx-2">JP Morgan</label>

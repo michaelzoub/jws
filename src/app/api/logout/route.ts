@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
     try {
-        cookies().delete('token')
+        cookies().delete('_vercel_jwt')
         return NextResponse.json(
             { success: true, message: 'Logged out successfully' },
             {
