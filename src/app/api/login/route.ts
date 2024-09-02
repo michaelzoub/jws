@@ -58,7 +58,7 @@ export async function POST(request: Request) {
             maxAge: 2592000,
             expires: expiresAt, 
             path: '/',   
-            domain: process.env.NODE_ENV === 'production' ? 'jws-pi.vercel.app' : undefined,
+            //domain: process.env.NODE_ENV === 'production' ? 'jws-pi.vercel.app' : undefined,
         })
         console.log('cookies set')
         return NextResponse.json({jwttoken})
