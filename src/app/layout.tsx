@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geologica } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "./components/navbar";
 
-const geologica = Geologica({ subsets: ["latin"]});
+const geologica = Inter({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
