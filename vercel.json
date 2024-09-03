@@ -1,7 +1,7 @@
 
 {
     "crons": [{
-      "path": "https://jws-pi.vercel.app/api/scraper",
+      "path": "/api/scraper",
       "schedule": "30 12 * * *"
     }]
   }
