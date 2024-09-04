@@ -17,7 +17,9 @@ const meta = "https://www.google.com/search?q=meta%20engineer%20job%20postings&s
 //change this to POST once I'm ready to deploy to prod (CRON checks this file for POST routes)
 
 export async function GET(request: Request) {
+    console.log('api scraper cron hit')
     try {
+        console.log('running')
         return NextResponse.json({status: 200})
     } catch(error) {
         return NextResponse.json({status:400})
