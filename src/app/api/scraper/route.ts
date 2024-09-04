@@ -35,6 +35,7 @@ export async function GET(request: Request) {
         });
     });
     console.log('apple data',appleData)
+    /*
     await page.goto(amazon, { waitUntil: 'networkidle0' })
     const amazonData = await page.evaluate(() => {
         const articles = document.querySelectorAll('ul.jobs-module_root__gY8Hp li');
@@ -66,14 +67,14 @@ export async function GET(request: Request) {
            //const date = e.querySelector('div.css-zoser8').innerText;
             return { url, };
         });
-    })
+    }) */
 
     //create an array with all company data in objects
     const object:any =  [
 
         {apple: appleData},
-        {amazon: amazonData},
-        {nvidia: nvidiaData},
+        //{amazon: amazonData},
+       // {nvidia: nvidiaData},
 
     ]
 
